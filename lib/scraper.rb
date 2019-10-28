@@ -24,6 +24,8 @@ class Scraper
     socials = []
     doc.css("div.vitals-container").css("div.social-icon-container").css("a").each do |link|
       socials << link.attribute("href").value
+      if /twitter/
+        profile{:twitter} = link.attribute("href").value
     end
     socials
     binding.pry
