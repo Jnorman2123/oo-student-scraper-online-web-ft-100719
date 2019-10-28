@@ -24,8 +24,8 @@ class Scraper
     doc.css("div.vitals-container").css("div.social-icon-container")[1].css("a").attribute("href").value.each do |attribute|
       socials = []
       socials << attribute
-      socials
     end
+    socials
     binding.pry
   end
 
