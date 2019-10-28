@@ -21,9 +21,9 @@ class Scraper
     html = open(profile_url)
     profile = {}
     doc = Nokogiri::HTML(html)
-    doc.css("div.vitals-container").css("div.social-icon-container").css("a").attribute("href").value.each do |attribute|
+    doc.css("div.vitals-container").css("div.social-icon-container").css("a").attribute("href").each do |attribute|
       socials = []
-      socials << attribute
+      socials << attribute.value
     end
     socials
     binding.pry
