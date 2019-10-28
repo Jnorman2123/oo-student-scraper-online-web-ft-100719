@@ -34,7 +34,7 @@ class Scraper
         profile[:blog] = link.attribute("href").value
       end
     end
-    profile[:profile_quote] = doc.css("div.vitals-container div.vitals-text-container h2.profile-quote").text.strip
+    profile[:profile_quote] = doc.css("div.profile-quote").text.strip
   end
 
 end
