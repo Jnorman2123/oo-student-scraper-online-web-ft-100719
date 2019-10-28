@@ -22,7 +22,7 @@ class Scraper
     profile = {}
     doc = Nokogiri::HTML(html)
     socials = []
-    doc.css("div.vitals-container").css("div.social-icon-container").css("a").attribute("href").each do |attribute|
+    doc.css("div.vitals-container").css("div.social-icon-container").css("a").each do |attribute|
       socials << attribute.value
     end
     socials
