@@ -25,17 +25,16 @@ class Scraper
     doc.css("div.vitals-container").css("div.social-icon-container").css("a").each do |link|
       case link.attribute("href").value
       when /twitter/
-        profile{:twitter} = link.attribute("href").value
+        profile[:twitter] = link.attribute("href").value
       when /github/
-        profile{:github} = link.attribute("href").value
+        profile[:github] = link.attribute("href").value
       when /linkedin/
-        profile{:linkedin} = link.attribute("href").value
+        profile[:linkedin] = link.attribute("href").value
       else
-        profile{:blog} = link.attribute("href").value
+        profile[:blog] = link.attribute("href").value
       end
     end
-    socials
-    binding.pry
+    profile[:profile_quote] = doc.css("div.vitals-container div.vitals-text-container h2.profile-quote").text.strip
   end
 
 end
